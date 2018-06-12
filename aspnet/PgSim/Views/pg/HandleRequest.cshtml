@@ -1,0 +1,22 @@
+﻿@model PgSim.Models.formtorequest
+
+
+<form action="@ViewData["url"]" name="frm1" method="post">
+    <p>Please wait.......</p>
+    <input type="hidden" name="signature" value="@ViewData["signature"]" />
+    <input type="hidden" name="orderNote" value="@Model.orderNote" />
+    <input type="hidden" name="orderCurrency" value="@Model.orderCurrency" />
+    <input type="hidden" name="customerName" value="@Model.customerName" />
+    <input type="hidden" name="customerEmail" value="@Model.customerEmail" />
+    <input type="hidden" name="customerPhone" value="@Model.customerPhone" />
+    <input type="hidden" name="orderAmount" value="@Model.orderAmount" />
+    <input type="hidden" name="notifyUrl" value="@Model.notifyUrl" />
+    <input type="hidden" name="returnUrl" value="@Model.returnUrl" />
+    <input type="hidden" name="appId" value="@Model.appId" />
+    <input type="hidden" name="orderId" value="@Model.orderId" />
+</form>
+<script>
+    window.onload = function () {
+        document.forms['frm1'].submit();
+    }
+</script>

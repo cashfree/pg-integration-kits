@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Cashfree - Signature Generator
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  body(onload='document.frm1.submit()')
+    // <body>
+    form#frm1(action='#{url}', name='frm1', method='post')
+      p Please wait.......
+      script(type='text/javascript').
+        var postData = JSON.parse('!{postData}');
+        for(var key in postData){
+        var input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('value', postData[key]);
+        input.setAttribute('name', key);
+        document.getElementById("frm1").appendChild(input);
+        }

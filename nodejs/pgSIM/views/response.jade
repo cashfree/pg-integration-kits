@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title Cashfree - PG Response Details
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  body
+    h1(align='center') PG Response
+    .container
+      #panel.panel
+        #heading.panel-heading
+        .panel-body
+          // <div class="container">
+          table.table.table-hover
+            tbody#tablebody
+              tr
+                td Order ID
+                td#orderId
+              tr
+                td Order Amount
+                td#orderAmount
+              tr
+                td Reference ID
+                td#referenceId
+              tr
+                td Transaction Status
+                td#txStatus
+              tr
+                td Payment Mode 
+                td#paymentMode
+              tr
+                td Message
+                td#txMsg
+              tr
+                td Transaction Time
+                td#txTime
+              script(type='text/javascript').
+                var postData = JSON.parse('!{postData}');
+                if(postData.signature==postData.computedsignature){
+                document.getElementById("panel").className += " panel-success";
+                document.getElementById("heading").innerHTML = "Signature Verification Successful";
+                }else{
+                document.getElementById("panel").className += " panel-danger";
+                document.getElementById("heading").innerHTML = "Signature Verification Failed";
+                }
+                for(var key in postData){
+                document.getElementById(key).innerHTML = postData[key];
+                }
+          // </div>

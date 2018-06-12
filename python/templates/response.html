@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cashfree - PG Response Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1 align="center">PG Response</h1>
+	{% if postData.signature==computedsignature %}	
+	<div class="container"> 
+	<div class="panel panel-success">
+	  <div class="panel-heading">Signature Verification Successful</div>
+	  <div class="panel-body">
+	  	<!-- <div class="container"> -->
+	 		<table class="table table-hover">
+			    <tbody>
+			      <tr>
+			        <td>Order ID</td>
+			        <td>{{postData.orderId}}</td>
+			      </tr>
+			      <tr>
+			        <td>Order Amount</td>
+			        <td>{{postData.orderAmount}}</td>
+			      </tr>
+			      <tr>
+			        <td>Reference ID</td>
+			        <td>{{postData.referenceId}}</td>
+			      </tr>
+			      <tr>
+			        <td>Transaction Status</td>
+			        <td>{{postData.txStatus}}</td>
+			      </tr>
+			      <tr>
+			        <td>Payment Mode </td>
+			        <td>{{postData.paymentMode}}</td>
+			      </tr>
+			      <tr>
+			        <td>Message</td>
+			        <td>{{postData.txMsg}}</td>
+			      </tr>
+			      <tr>
+			        <td>Transaction Time</td>
+			        <td>{{postData.txTime}}</td>
+			      </tr>
+			    </tbody>
+			</table>	
+		<!-- </div> -->
+
+	   </div>
+	</div>
+	</div>
+	{% else %}
+	<div class="container"> 
+	<div class="panel panel-danger">
+	  <div class="panel-heading">Signature Verification failed</div>
+	  <div class="panel-body">
+	  	<table class="table table-hover">
+			    <tbody>
+			      <tr>
+			        <td>Order ID</td>
+			        <td>{{postData.orderId}}</td>
+			      </tr>
+			      <tr>
+			        <td>Order Amount</td>
+			        <td>{{postData.orderAmount}}</td>
+			      </tr>
+			      <tr>
+			        <td>Reference ID</td>
+			        <td>{{postData.referenceId}}</td>
+			      </tr>
+			      <tr>
+			        <td>Transaction Status</td>
+			        <td>{{postData.txStatus}}</td>
+			      </tr>
+			      <tr>
+			        <td>Payment Mode </td>
+			        <td>{{postData.paymentMode}}</td>
+			      </tr>
+			      <tr>
+			        <td>Message</td>
+			        <td>{{postData.txMsg}}</td>
+			      </tr>
+			      <tr>
+			        <td>Transaction Time</td>
+			        <td>{{postData.txTime}}</td>
+			      </tr>
+			    </tbody>
+			</table>
+	  </div>	
+	</div>	
+	</div>
+	{% endif %}
+</body>
+</html>
+
+
+

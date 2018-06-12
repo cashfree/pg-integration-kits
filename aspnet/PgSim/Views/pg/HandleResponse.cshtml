@@ -1,0 +1,43 @@
+﻿<h1 align="center">PG Response</h1>
+<div class="container">
+    <div class="@ViewData["panel"]">
+        <div class="panel-heading">@ViewData["heading"]</div>
+        <div class="panel-body">
+            <!-- <div class="container"> -->
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td>Order ID</td>
+                        <td>@ViewData["orderId"]</td>
+                    </tr>
+                    <tr>
+                        <td>Order Amount</td>
+                        <td>@ViewData["orderAmount"]</td>
+                    </tr>
+                    <tr>
+                        <td>Reference ID</td>
+                        <td>@ViewData["referenceId"]</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Status</td>
+                        <td>@ViewData["txStatus"]</td>
+                    </tr>
+                    <tr>
+                        <td>Payment Mode </td>
+                        <td>@ViewData["paymentMode"]</td>
+                    </tr>
+                    <tr>
+                        <td>Message</td>
+                        <td>@ViewData["txMsg"]</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Time</td>
+                        <td>@ViewData["txTime"]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- </div> -->
+
+        </div>
+    </div>
+</div>

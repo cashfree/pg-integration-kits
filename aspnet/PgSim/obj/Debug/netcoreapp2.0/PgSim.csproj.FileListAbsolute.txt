@@ -1,0 +1,11 @@
+C:\Users\Evan\source\repos\PgSim\PgSim\bin\Debug\netcoreapp2.0\PgSim.deps.json
+C:\Users\Evan\source\repos\PgSim\PgSim\bin\Debug\netcoreapp2.0\PgSim.runtimeconfig.json
+C:\Users\Evan\source\repos\PgSim\PgSim\bin\Debug\netcoreapp2.0\PgSim.runtimeconfig.dev.json
+C:\Users\Evan\source\repos\PgSim\PgSim\bin\Debug\netcoreapp2.0\PgSim.dll
+C:\Users\Evan\source\repos\PgSim\PgSim\bin\Debug\netcoreapp2.0\PgSim.pdb
+C:\Users\Evan\source\repos\PgSim\PgSim\obj\Debug\netcoreapp2.0\PgSim.csprojAssemblyReference.cache
+C:\Users\Evan\source\repos\PgSim\PgSim\obj\Debug\netcoreapp2.0\PgSim.csproj.CoreCompileInputs.cache
+C:\Users\Evan\source\repos\PgSim\PgSim\obj\Debug\netcoreapp2.0\PgSim.AssemblyInfoInputs.cache
+C:\Users\Evan\source\repos\PgSim\PgSim\obj\Debug\netcoreapp2.0\PgSim.AssemblyInfo.cs
+C:\Users\Evan\source\repos\PgSim\PgSim\obj\Debug\netcoreapp2.0\PgSim.dll
+C:\Users\Evan\source\repos\PgSim\PgSim\obj\Debug\netcoreapp2.0\PgSim.pdb

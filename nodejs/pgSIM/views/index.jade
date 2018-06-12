@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  body
+    br
+    br
+    .container.fluid
+      h1(align='center') Cashfree PG Test Form
+      .alert.alert-info
+        strong Note: 
+        |  Please insert your 
+        span.label.label-info Secret_key
+        |  in request and response files.
+      .alert.alert-info
+        strong Note: 
+        |  Please change 
+        span.label.label-info mode
+        |  to "TEST" in request if using Test appId/secretKey credentials. Access test credentials 
+        a(href='https://test.gocashfree.com/merchant/pg#api-key') here
+        |  and production credentials 
+        a(href='https://merchant.cashfree.com/merchant/pg#api-key') here
+        | .
+      form#redirectForm(method='post', action='/request')
+        .form-group
+          label App ID:
+          br
+          input.form-control(name='appId', placeholder='Enter App ID here (Ex. 123456a7890bc123defg4567)')
+        .form-group
+          label Order ID:
+          br
+          input.form-control(name='orderId', placeholder='Enter Order ID here (Ex. order00001)')
+        .form-group
+          label Order Amount:
+          br
+          input.form-control(name='orderAmount', placeholder='Enter Order Amount here (Ex. 100)')
+        .form-group
+          label Order Currency:
+          br
+          input.form-control(name='orderCurrency', value='INR', placeholder='Enter Currency here (Ex. INR)')
+        .form-group
+          label Order Note:
+          br
+          input.form-control(name='orderNote', placeholder='Enter Order Note here (Ex. Test order)')
+        .form-group
+          label Name:
+          br
+          input.form-control(name='customerName', placeholder='Enter your name here (Ex. John Doe)')
+        .form-group
+          label Email:
+          br
+          input.form-control(name='customerEmail', placeholder='Enter your email address here (Ex. Johndoe@test.com)')
+        .form-group
+          label Phone:
+          br
+          input.form-control(name='customerPhone', placeholder='Enter your phone number here (Ex. 9999999999)')
+        .form-group
+          label Return URL:
+          br
+          input.form-control(name='returnUrl', placeholder='Enter the URL to which customer will be redirected (Ex. www.example.com)')
+        .form-group
+          label Notify URL:
+          br
+          input.form-control(name='notifyUrl', placeholder='Enter the URL to get server notificaitons (Ex. www.example.com)')
+        button.btn.btn-primary.btn-block(type='submit', value='Pay') Submit
+        br
+        br
+        br
+        br
