@@ -1,6 +1,6 @@
 # PaymentGateway-Integration-kits
 
-This repositorty provides you with an option to test our payment gateway with various popular platforms and also to integrate it into your site. 
+This repository provides you with an option to test our payment gateway with various popular platforms and also to integrate it into your site. 
 
 ## Let's start with php
 
@@ -23,6 +23,7 @@ Lets start by testing our payment gateway,
 You can access the test credentials from [here](https://test.gocashfree.com/merchant/pg#api-key).
 Open the file *request.php*,
 1)Change the value of $mode to "TEST"
+
 2)Change the value of $secretKey to your secret key. 
 
 ***Start.php***
@@ -30,6 +31,7 @@ Open the file *request.php*,
 To test our gateway,run this file on the web server and fill in the required details.Enter the test details on the payment gateway and you will be directed to our payment gateway simulator where you can simulate either a successful or a failed transaction.
 
 ***Request.php***
+
 Lets see what's happening in the background. The following code generates a signature from the details given.
 
 ```
