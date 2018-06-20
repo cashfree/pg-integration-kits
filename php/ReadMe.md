@@ -1,3 +1,6 @@
+
+*****************************************************************************************
+
 # Getting Started
 
 Download the php folder from the above repository.You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder form the repository.
@@ -44,10 +47,10 @@ You can access the test credentials from merchant dashboard (API access > creden
 
   - Simulate a failed/success transaction and you will be redirected to the *returnUrl*(given in step 2) with the transaction details.
 
-[NOTE :](#) 
+**NOTE :** 
 
--In the file request.php, please make sure that you are using the correct integration mode. 
--Give a valid returnUrl, since all the transaction details will be sent to it.
+- In the file request.php, please make sure that you are using the correct integration mode. 
+- Give a valid returnUrl, since all the transaction details will be sent to it.
 
 ## More Details
 
@@ -94,7 +97,28 @@ It uses a hidden form to submit the details.If the signature matches with signat
 
 ***Response.php***
 
-Place/Upload this file at the correct location as per the returnUrl.It collects the transaction details and displays them.
+Here we collect the transaction details, verify that they are valid and are received from *cashfree*.it is done using the below code.
+
+```php
+     
+     $secretkey = "<YOUR_SECRET_KEY_HERE>";
+     $orderId = $_POST["orderId"];
+     $orderAmount = $_POST["orderAmount"];
+     $referenceId = $_POST["referenceId"];
+     $txStatus = $_POST["txStatus"];
+     $paymentMode = $_POST["paymentMode"];
+     $txMsg = $_POST["txMsg"];
+     $txTime = $_POST["txTime"];
+     $signature = $_POST["signature"];
+     
+     $data = $orderId.$orderAmount.$referenceId.$txStatus.$paymentMode.$txMsg.$txTime;
+     
+     $hash_hmac = hash_hmac('sha256', $data, $secretkey, true) ;
+     $computedSignature = base64_encode($hash_hmac);
+
+```
+After verification transaction details are displayed.
+
 
 ## Support
 
