@@ -1,4 +1,4 @@
-# Let's start with php
+# Getting Started
 
 Download the php folder from the above repository.You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder form the repository.
 
@@ -23,31 +23,46 @@ You can access the test credentials from merchant dashboard (API access > creden
 
 **Step 1**
 
-  - Open the file request.php, and update the value of the variable $mode to "TEST"(for testing) or "PROD"(for production) depending on your environment.
+  - Open the file *request.php*, and update the value of the variable *$mode* to "TEST"(for testing) or "PROD"(for production) depending on your environment.
 
-  - Update the variable secretKey with the correct value for the mode you have selected
+  - Update the variable *$secretKey* with the correct value for the mode you have selected in *request.php* and *response.php* files.
 
 **Step 2**
 
-  - Visit localhost/php/start.php in the browser, fill in the details as required and submit. 
+  - Visit *localhost/php/start.php* in the browser, fill in the details as required, give the returnUrl as *localhost/php/response.php* and click submit.
 
   - Once the payment page opens enter the below card details for testing purpose
+  
   ```
   Card Number : 4111 1111 1111 1111
   CVV : 123
   ```
   You can enter any name,month and year.
+  For more details, see [Test Data](https://docs.cashfree.com/docs/resources/#test-data).
 
 **Step 3**
 
-  - Simulate a failed/success transaction (add some lines here about this) and the return URL
+  - Simulate a failed/success transaction and you will be redirected to the *returnUrl*(given in step 2) with the transaction details.
 
-[NOTE :](#) In the file request.php, please make sure that you are using the correct integration mode. 
+[NOTE :](#) 
+
+-In the file request.php, please make sure that you are using the correct integration mode. 
+-Give a valid returnUrl, since all the transaction details will be sent to it.
+
+## More Details
+
+Since you have completed testing ,you now know how our payment gateway works.
+Start integrating by changing the *$mode* in *request.php* to "PROD" and get the production credentials from (API access > credentials) [here](https://merchant.cashfree.com/merchant/pg#api-key). Also update the variable *$secretkey* in *request.php* and *response.php* files.
 
 ***Start.php***
 
-To test our gateway, run this file on the web server and fill in the required details.Enter the test details on the payment gateway and you will be directed to our payment gateway simulator where you can simulate either a successful or a failed transaction.
+This file collects the required details for processing a payment request.you can easily modify and integrate it into your site.Note that the form action should be as "request.php".
 
+```html
+
+      <form id="redirectForm" method="post" action="request.php">
+
+```
 ***Request.php***
 
 Lets see what's happening in the background. The following code generates a signature from the details given.
@@ -85,4 +100,4 @@ Place/Upload this file at the correct location as per the returnUrl.It collects 
 
 For further queries reach us at [techsupport@gocashfree.com](techsupport@gocashfree.com). 
 
-********************************************************
+*****************************************************************************************
