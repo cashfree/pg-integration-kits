@@ -5,7 +5,7 @@
 
 Download the php folder from the above repository.You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder from the repository.
 
-Extract the downloaded zip file and place it in the root directory of your web server. Let's assume that the root directory is /var/www/html (the copied directory should then look like /var/www/html/php/) 
+Extract the downloaded zip file and place it in the root directory of your web server. In linux the default root directory is /var/www/html (the copied folder should then look like /var/www/html/php/). In wndows if you installed WAMP to c:\wamp then your webserver root directory would be c:\wamp\www. 
 
 
 ## Pre-requisites
