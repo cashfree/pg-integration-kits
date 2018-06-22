@@ -26,7 +26,8 @@ Below we describe the Python integration for Cashfree PG. You'll need Cashfree c
   - Update the variable *$secretKey* with the correct value for the mode you have selected in the *request.py* file.
 
 **Step 2**
-  Once you have installed flask in your system and made the above changes you need to start the python application.
+
+  Once you have installed flask in your system and completed the above changes you need to start the python application.
   Run the following commands from the folder where you have the request.py file.  
   ```bash
   export FLASK_APP=request.py
