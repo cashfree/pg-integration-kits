@@ -2,9 +2,9 @@
 
 # Getting Started
 
-Download the php folder from the above repository. You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder from the repository.
+Download the python folder from the above repository. You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder from the repository.
 
-Extract the downloaded zip file and place it in the some specific directory (for example in linux - /home/sharoh/cf-python/). 
+Extract the downloaded zip file and place it in the some specific directory (for example in linux - /home/sharoh/cf-python/, windows users can also place the directory in any folder like C:\Users\sharoh\cf-python). 
 
 ## Pre-requisites
 
@@ -23,7 +23,7 @@ Below we describe the Python integration for Cashfree PG. You'll need Cashfree c
 
   - Open the file *request.py*, and update the value of the variable *mode* to "TEST"(for testing) or "PROD"(for production) depending on your environment (line 19).
 
-  - Update the variable *$secretKey* with the correct value for the mode you have selected in the *request.py* file.
+  - Update the variable *secretKey* with the correct value for the mode you have selected in the *request.py* file.
 
 **Step 2**
 
@@ -55,7 +55,7 @@ Below we describe the Python integration for Cashfree PG. You'll need Cashfree c
 
 ## More Details
 
-To start integrating in production you just need to change the *$mode* in *request.php* to "PROD" and get the production credentials from (API access > credentials) [here](https://merchant.cashfree.com/merchant/pg#api-key). Also update the variable *$secretkey* in *request.py* file.
+To start integrating in production you just need to change the *mode* in *request.py* to "PROD" and get the production credentials from (API access > credentials) [here](https://merchant.cashfree.com/merchant/pg#api-key). Also update the variable *secretkey* in *request.py* file.
 
 
 ## Support
