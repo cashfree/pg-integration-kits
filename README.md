@@ -4,7 +4,7 @@ This repository provides you with an option to test our payment gateway with var
 
 ## Platforms 
 
-- **[Php](php/ReadMe.md)**
+- **[Php](php/README.md)**
 
 - **[Asp.Net](aspnet/ReadMe.md)**
 
