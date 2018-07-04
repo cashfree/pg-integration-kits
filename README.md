@@ -12,7 +12,7 @@ This repository provides you with an option to test our payment gateway with var
 
 - **[Nodejs](nodejs/pgSIM/ReadMe.md)**
 
-- **[Python](python/ReadMe.md)**
+- **[Python](python/README.md)**
 
 - **[Ruby](ror/pgsim/ReadMe.md)**
 
