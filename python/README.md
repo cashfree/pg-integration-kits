@@ -1,10 +1,8 @@
 *****************************************************************************************
 
 # Getting Started
-
-Download the python folder from the above repository. You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder from the repository.
-
-Extract the downloaded zip file and place it in the some specific directory (for example in linux - /home/sharoh/cf-python/, windows users can also place the directory in any folder like C:\Users\sharoh\cf-python). 
+Clone the above repository and extract the python subfolder from inside the pg-integration-kits folder.
+Place it in some specific directory (for example in linux - /home/sharoh/cf-python/, windows users can also place the directory in any folder like C:\Users\sharoh\cf-python). 
 
 ## Pre-requisites
 
