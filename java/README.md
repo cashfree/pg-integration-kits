@@ -2,33 +2,45 @@
 *****************************************************************************************
 
 # Getting Started
+Clone the above repository and extract the java subfolder from inside the pg-integration-kits folder.
 
-Download the php folder from the above repository.You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder from the repository.
+Copy the contents of the *java* subfolder and move then to a folder called *cashfree*.
 
-Extract the downloaded zip file and place it inside a folder called *cashfree*. We then move this *cashfree* folder to the webapps folder in our tomcat. Let's assume that the tomcat root directory is  /usr/local/apache-tomcat-9.0.10 (the copied directory should then look like  /usr/local/apache-tomcat-9.0.10/cashfree) 
+```
+git clone https://github.com/cashfree/pg-integration-kits.git
+mkdir ~/cashfree
+cp -r pg-integration-kits/java ~/cashfree/
+```
+We then move this *cashfree* folder to the webapps folder in our tomcat. Let's assume that the tomcat root directory is  /usr/local/apache-tomcat-9.0.10 (the copied directory should then look like  /usr/local/apache-tomcat-9.0.10/cashfree) 
 
+```
+export TOMCAT_HOME=/usr/local/apache-tomcat-9.0.10/
+mkdir $TOMCAT_HOME/webapps/cashfree
+mv ~/cashfree/* $TOMCAT_HOME/webapps/cashfree/
+```
 
 ## Pre-requisites
 
 ```
-1)Tomcat
-2)Php 7.0
+1)Tomcat (You can download from [here](https://tomcat.apache.org/download-90.cgi) 
+2)Java
 
 ```
 
 ## How to start
 
-Below we describe the PHP integration for Cashfree PG. You'll need Cashfree credentials for this setup to work. You can access the credentials from the merchant dashboard (API access > credentials) [here](https://test.gocashfree.com/merchant/pg#api-key).
+Below we describe the JAVA integration for Cashfree PG. You'll need Cashfree credentials for this setup to work. You can access the credentials from the merchant dashboard (API access > credentials) [here](https://test.gocashfree.com/merchant/pg#api-key).
 
 **Step 1**
 
-  - Open the file *request.php*, and update the value of the variable *$mode* to "TEST"(for testing) or "PROD"(for production) depending on your environment.
-
-  - Update the variable *$secretKey* with the correct value for the mode you have selected in *request.php* and *response.php* files.
+  - Update the variable *$secretKey* with the value which you accessed from the merchant dashboard in the *request.jsp* file
 
 **Step 2**
-
-  - Visit *localhost/php/start.php* in the browser, fill in the details as required, set the returnUrl as *localhost/php/response.php* and click Submit.
+  - Start your tomcat server 
+  ```
+  $TOMCAT_HOME/bin/startup.sh
+  ```
+  - Visit *localhost:8080/cashfree/start.html* in your browser, fill in the details as required, set the returnUrl as *http://localhost:8080/response.jsp* and click Submit.
 
   - Once the payment page loads, enter the following card details for testing purpose. 
   
@@ -44,75 +56,12 @@ Below we describe the PHP integration for Cashfree PG. You'll need Cashfree cred
 
 **NOTE :** 
 
-- In the file request.php, please make sure that you are using the correct integration mode. 
 - Give a valid returnUrl, since all the transaction details will be sent to it.
 - It is imperative that you process the response correctly to prevent any fraud on your website. 
 
 ## More Details
 
-To start integrating in production you just need to change the *$mode* in *request.php* to "PROD" and get the production credentials from (API access > credentials) [here](https://merchant.cashfree.com/merchant/pg#api-key). Also update the variable *$secretkey* in *request.php* and *response.php* files.
-
-***Start.php***
-
-This file collects the required details for processing a payment request. You can easily modify and integrate it in your website. Note that the form action should be as "request.php".
-
-```html
-
-      <form id="redirectForm" method="post" action="request.php">
-
-```
-***Request.php***
-
-This file receives the request from start.php and generates the correct PG details to send over to Cashfree. This includes a signature variable which is used to authenticate each request. The following code is used to generate the signature from the provided details.
-
-```php
-$secretKey = "<YOUR_SECRET_KEY_HERE>";
-  $postData = array( 
-  "appId" => $appId, 
-  "orderId" => $orderId, 
-  "orderAmount" => $orderAmount, 
-  "orderCurrency" => $orderCurrency, 
-  "orderNote" => $orderNote, 
-  "customerName" => $customerName, 
-  "customerPhone" => $customerPhone, 
-  "customerEmail" => $customerEmail,
-  "returnUrl" => $returnUrl, 
-  "notifyUrl" => $notifyUrl,
-);
-ksort($postData);
-$signatureData = "";
-foreach ($postData as $key => $value){
-    $signatureData .= $key.$value;
-}
-$signature = hash_hmac('sha256', $signatureData, $secretKey,true);
-$signature = base64_encode($signature);
-
-```
-If the signature matches with signature generated by us you will be allowed to proceed to the gateway. We will send the transaction response to the returnUrl provided by you in the request.
-
-***Response.php***
-
-Here we collect the transaction details, verify that they are valid and have been received from *Cashfree*. See below code to understand how this verification is done.
-
-```php
-     
-     $secretkey = "<YOUR_SECRET_KEY_HERE>";
-     $orderId = $_POST["orderId"];
-     $orderAmount = $_POST["orderAmount"];
-     $referenceId = $_POST["referenceId"];
-     $txStatus = $_POST["txStatus"];
-     $paymentMode = $_POST["paymentMode"];
-     $txMsg = $_POST["txMsg"];
-     $txTime = $_POST["txTime"];
-     $signature = $_POST["signature"];
-     
-     $data = $orderId.$orderAmount.$referenceId.$txStatus.$paymentMode.$txMsg.$txTime;
-     
-     $hash_hmac = hash_hmac('sha256', $data, $secretkey, true) ;
-     $computedSignature = base64_encode($hash_hmac);
-
-```
-Once the verification succeeds we display the transaction details.
+To start integrating in production you just need to change to prod credentials, these can be accessed from (API access > credentials) [here](https://merchant.cashfree.com/merchant/pg#api-key). Also update the variable *$secretkey* in *request.jsp* and *response.jsp* files.
 
 
 ## Support
