@@ -5,13 +5,13 @@
 
 Download the php folder from the above repository.You can refer [here](https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo) to download a single folder from the repository.
 
-Extract the downloaded zip file and place it in the root directory of your web server. Let's assume that the root directory is /var/www/html (the copied directory should then look like /var/www/html/php/) 
+Extract the downloaded zip file and place it inside a folder called *cashfree*. We then move this *cashfree* folder to the webapps folder in our tomcat. Let's assume that the tomcat root directory is  /usr/local/apache-tomcat-9.0.10 (the copied directory should then look like  /usr/local/apache-tomcat-9.0.10/cashfree) 
 
 
 ## Pre-requisites
 
 ```
-1)Apache web server
+1)Tomcat
 2)Php 7.0
 
 ```
