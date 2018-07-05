@@ -4,17 +4,17 @@ This repository provides you with an option to test our payment gateway with var
 
 ## Platforms 
 
-- **[Php](php/README.md)**
+- **[Php](php)**
 
-- **[Asp.Net](aspnet/ReadMe.md)**
+- **[Asp.Net](aspnet)**
 
-- **[Java](java/README.md)**
+- **[Java](java)**
 
-- **[Nodejs](nodejs/checkout/README.md)**
+- **[Nodejs](nodejs/checkout)**
 
-- **[Python](python/README.md)**
+- **[Python](python)**
 
-- **[Ruby](ror/pgsim/ReadMe.md)**
+- **[Ruby](ror/pgsim)**
 
 
 ## Support
