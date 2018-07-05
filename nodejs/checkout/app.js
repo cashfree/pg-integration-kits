@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());   
+app.use(express.json());
 app.use('/', indexRouter);
 
 app.post('/request',function(req, res, next){
@@ -34,7 +34,7 @@ app.post('/request',function(req, res, next){
 		"notifyUrl" : req.body.notifyUrl
 	},
 	mode = "TEST",
-	secretKey = "<ENTER_SECRET_KEY_HERE>",
+	secretKey = "<YOUR SECRET KEY HERE>",
 	sortedkeys = Object.keys(postData),
 	url="",
 	signatureData = "";
@@ -64,7 +64,7 @@ app.post('/response',function(req, res, next){
 	  "txMsg" : req.body.txMsg,
 	  "txTime" : req.body.txTime
 	 },
-	secretKey = "<ENTER_SECRET_KEY_HERE>",
+	secretKey = "<YOUR SECRET KEY HERE>",
 
 	signatureData = "";
 	for (var key in postData) {
