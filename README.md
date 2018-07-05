@@ -10,7 +10,7 @@ This repository provides you with an option to test our payment gateway with var
 
 - **[Java](java/README.md)**
 
-- **[Nodejs](nodejs/pgSIM/ReadMe.md)**
+- **[Nodejs](nodejs/checkout/README.md)**
 
 - **[Python](python/README.md)**
 
