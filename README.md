@@ -1,3 +1,5 @@
+*****************************************************************************************
+
 # PaymentGateway-Integration-kits
 
 This repository provides you with an option to test our payment gateway with various popular platforms and also to integrate it into your site. 
@@ -16,7 +18,13 @@ This repository provides you with an option to test our payment gateway with var
 
 - **[Ruby](ror/pgsim)**
 
+## Found a bug?
+
+Report it at [https://github.com/cashfree/pg-integration-kits/issues](https://github.com/cashfree/pg-integration-kits/issues)
+
 
 ## Support
 
 For further queries reach us at [techsupport@gocashfree.com](techsupport@gocashfree.com).
+
+*****************************************************************************************
