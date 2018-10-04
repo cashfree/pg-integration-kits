@@ -25,6 +25,6 @@ Report it at [https://github.com/cashfree/pg-integration-kits/issues](https://gi
 
 ## Support
 
-For further queries reach us at [techsupport@gocashfree.com](techsupport@cashfree.com).
+For further queries reach us at [techsupport@cashfree.com](techsupport@cashfree.com).
 
 *****************************************************************************************
