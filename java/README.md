@@ -40,7 +40,7 @@ Below we describe the JAVA integration for Cashfree PG. You'll need Cashfree cre
   ```
   $TOMCAT_HOME/bin/startup.sh
   ```
-  - Visit *localhost:8080/cashfree/start.html* in your browser, fill in the details as required, set the returnUrl as *http://localhost:8080/response.jsp* and click Submit.
+  - Visit *localhost:8080/cashfree/start.html* in your browser, fill in the details as required, set the returnUrl as *http://localhost:8080/cashfree/response.jsp* and click Submit.
 
   - Once the payment page loads, enter the following card details for testing purpose. 
   
