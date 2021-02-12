@@ -9,8 +9,8 @@
 </head>
 <body>
 	<h1 align="center">PG Response</h1>
-	{% if postData.signature==computedsignature %}	
-	<div class="container"> 
+	{% if postData.signature == computedsignature %}	
+	<div class="container">
 	<div class="panel panel-success">
 	  <div class="panel-heading">Signature Verification Successful</div>
 	  <div class="panel-body">
@@ -46,14 +46,14 @@
 			        <td>{{postData.txTime}}</td>
 			      </tr>
 			    </tbody>
-			</table>	
+			</table>
 		<!-- </div> -->
 
 	   </div>
 	</div>
 	</div>
 	{% else %}
-	<div class="container"> 
+	<div class="container">
 	<div class="panel panel-danger">
 	  <div class="panel-heading">Signature Verification failed</div>
 	  <div class="panel-body">
@@ -89,12 +89,9 @@
 			      </tr>
 			    </tbody>
 			</table>
-	  </div>	
-	</div>	
+	  </div>
+	</div>
 	</div>
 	{% endif %}
 </body>
 </html>
-
-
-
